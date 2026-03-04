@@ -23,7 +23,7 @@ jobs:
 
   report:
      if: ${{ always() }}
-     needs: playwright_test
+     needs: test
      name: Reporting
      runs-on: ubuntu-latest
      steps:
