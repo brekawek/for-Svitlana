@@ -24,9 +24,14 @@ jobs:
   report:
      if: ${{ always() }}
      needs: test
-     name: Reporting
      runs-on: ubuntu-latest
      steps:
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 17
+
       - name: Load test report history
         uses: actions/checkout@v3
         if: always()
