@@ -41,16 +41,8 @@ jobs:
           name: allure-results
           path: allure-results
 
-      - name: Load test report history
-        uses: actions/checkout@v4
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.13
-        if: always()
         id: allure-report
         with:
           allure_results: allure-results
@@ -60,7 +52,6 @@ jobs:
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v4
-        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
