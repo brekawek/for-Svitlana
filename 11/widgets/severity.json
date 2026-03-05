@@ -1,1 +1,0 @@
-[{"uid":"268222b42bfee69","name":"fill in the form and submit - happy path","time":{"start":1772736637616,"stop":1772736637762,"duration":146},"status":"failed","severity":"normal"},{"uid":"663d29450c9d4016","name":"fill in the form and submit - 500 Internal Server Error","time":{"start":1772736637587,"stop":1772736637740,"duration":153},"status":"failed","severity":"normal"}]
