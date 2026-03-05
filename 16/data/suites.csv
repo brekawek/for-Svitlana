@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1113","fill in the form and submit - 500 Internal Server Error","chromium","Thu Mar 05 19:38:50 UTC 2026","passed","Thu Mar 05 19:38:51 UTC 2026","Contact form","contact-form.spec.ts","",""
+"","3593","fill in the form and submit - happy path","chromium","Thu Mar 05 19:38:50 UTC 2026","passed","Thu Mar 05 19:38:53 UTC 2026","Contact form","contact-form.spec.ts","",""
