@@ -25,7 +25,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: allure-results
-        path: build/allure-results
+        path: allure-results
         retention-days: 1
 
   report:
@@ -39,7 +39,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: allure-results
-          path: build/allure-results
+          path: allure-results
 
       - name: Load test report history
         uses: actions/checkout@v4
