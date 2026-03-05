@@ -4,13 +4,21 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist",
+    "noEmit": true,
+    "types": ["node", "@playwright/test"],
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "removeComments": false,
-    "stripInternal": false,
     "allowSyntheticDefaultImports": true
   },
+  "include": [
+    "tests",
+    "fixtures",
+    "page-object-models",
+    "test-data",
+    "types",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
 }

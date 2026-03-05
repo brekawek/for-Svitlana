@@ -1,5 +1,5 @@
-import { Page } from '@playwright/test';
-import { contactFormType } from '../../types/contactFormType';
+import { type Page } from '@playwright/test';
+import type { ContactFormData } from '../../types/ContactFormData';
 
 export default class ContactFormPage {
     constructor(private page: Page) {}
@@ -14,11 +14,11 @@ export default class ContactFormPage {
         .filter({ hasText: 'Your submission was successful.' });
     errorMessage = this.page.getByRole('alert').filter({ hasText: 'error' });
 
-    async goToContactFormPage() {
+    async goto() {
         await this.page.goto('');
     }
 
-    async fillForm(formData: contactFormType) {
+    async fillAndSubmit(formData: ContactFormData) {
         await this.nameInput.fill(formData.name);
         await this.emailInput.fill(formData.email);
         await this.messageInput.fill(formData.message);

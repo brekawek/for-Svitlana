@@ -6,7 +6,10 @@
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "test:debug": "playwright test --debug"
+    "test:debug": "playwright test --debug",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "report:allure": "allure generate ./allure-results -o ./allure-report --clean && allure serve ./allure-report"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
     "@faker-js/faker": "^10.3.0",
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.3.3",
+    "allure-commandline": "^2.34.1",
     "allure-playwright": "^3.5.0",
     "eslint": "^9.39.3",
     "eslint-config-prettier": "^10.1.8",
