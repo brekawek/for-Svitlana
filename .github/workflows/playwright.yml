@@ -57,3 +57,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
+
+      - name: Add summary
+        if: always()
+        run: |
+          echo "# 📊 Test report summary" >> $GITHUB_STEP_SUMMARY
+          echo "The Allure report has been generated and is being published. It will be available in a few minutes." >> $GITHUB_STEP_SUMMARY
+          echo "[View Full Allure Report](https://brekawek.github.io/for-Svitlana/)" >> $GITHUB_STEP_SUMMARY
