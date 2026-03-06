@@ -3,7 +3,7 @@ import { generateContactFormData } from '../test-data/testData';
 
 test.describe('Contact form', () => {
     test('fill in the form and submit - happy path', async ({ page, contactFormPage }) => {
-        const validFormData = generateContactFormData();
+        const formData = generateContactFormData();
         const responsePromise = page.waitForResponse(
             (response) =>
                 response.url().includes('/wp-admin/admin-ajax.php') &&
@@ -11,7 +11,7 @@ test.describe('Contact form', () => {
         );
 
         await contactFormPage.goto();
-        await contactFormPage.fillAndSubmit(validFormData);
+        await contactFormPage.fillAndSubmit(formData);
 
         const response = await responsePromise;
 
@@ -24,7 +24,7 @@ test.describe('Contact form', () => {
         page,
         contactFormPage,
     }) => {
-        const invalidformData = generateContactFormData();
+        const formData = generateContactFormData();
 
         await page.route('**/wp-admin/admin-ajax.php', (route) =>
             route.fulfill({
@@ -37,7 +37,7 @@ test.describe('Contact form', () => {
         );
 
         await contactFormPage.goto();
-        await contactFormPage.fillAndSubmit(invalidformData);
+        await contactFormPage.fillAndSubmit(formData);
 
         await expect(contactFormPage.errorMessage).toBeVisible();
         await expect(contactFormPage.successMessage).toBeHidden();
